@@ -13,6 +13,7 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
+        host: 'cars.test',
         cors: true,
     },
 });
