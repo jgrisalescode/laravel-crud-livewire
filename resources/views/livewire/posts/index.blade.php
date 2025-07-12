@@ -26,5 +26,8 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="p-4">
+            {{ $products->links() }}
+        </div>
     </div>
 </div>

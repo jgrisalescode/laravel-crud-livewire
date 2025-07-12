@@ -4,18 +4,17 @@ namespace App\Livewire\Posts;
 
 use App\Models\Product;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
-    public $products;
-
-    public function mount()
-    {
-        $this->products = Product::take(10)->get();
-    }
+    use WithPagination;
 
     public function render()
     {
-        return view('livewire.posts.index');
+        return view('livewire.posts.index', [
+            // 'products' => Product::simplePaginate(10),
+            'products' => Product::paginate(10),
+        ]);
     }
 }
