@@ -14,7 +14,7 @@ class Index extends Component
     {
         return view('livewire.posts.index', [
             // 'products' => Product::simplePaginate(10),
-            'products' => Product::paginate(10),
+            'products' => Product::latest()->paginate(10),
         ]);
     }
 }
