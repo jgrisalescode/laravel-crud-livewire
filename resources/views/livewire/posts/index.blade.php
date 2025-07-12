@@ -33,6 +33,7 @@
                     <th scope="col" class="p-4">Stock</th>
                     <th scope="col" class="p-4">Price</th>
                     <th scope="col" class="p-4">Created At</th>
+                    <th scope="col" class="p-4">Actions</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-outline dark:divide-outline-dark">
@@ -43,6 +44,17 @@
                         <td class="p-4">{{ $product->stock }}</td>
                         <td class="p-4">{{ $product->price }}</td>
                         <td class="p-4">{{ $product->created_at }}</td>
+                        <td class="p-4">
+                            <a href="{{ route('products.edit', $product) }}" wire:navigate>
+                                <!-- alternate Button with Icon -->
+                                <button type="button" class="inline-flex justify-center items-center gap-2 whitespace-nowrap rounded-radius bg-surface-alt border border-surface-alt dark:border-surface-dark-alt px-4 py-2 text-xs font-medium tracking-wide text-on-surface-strong transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface-alt active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-surface-dark-alt dark:text-on-surface-dark-strong dark:focus-visible:outline-surface-dark-alt">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4 fill-on-surface-strong dark:fill-on-surface-dark-strong" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                                    </svg>
+                                    Edit
+                                </button>
+                            </a>
+                        </td>
                     </tr>
                 @empty
                     <tr>

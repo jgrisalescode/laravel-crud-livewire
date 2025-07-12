@@ -2,6 +2,7 @@
 
 use App\Livewire\Posts\Create;
 use App\Livewire\Posts\Index;
+use App\Livewire\Posts\Update;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -25,5 +26,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('products', Index::class)->name('products.index');
 Route::get('products/create', Create::class)->name('products.create');
+Route::get('products/{product}/edit', Update::class)->name('products.edit');
 
 require __DIR__.'/auth.php';

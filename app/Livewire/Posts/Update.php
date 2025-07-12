@@ -3,17 +3,23 @@
 namespace App\Livewire\Posts;
 
 use App\Livewire\Forms\ProductForm;
+use App\Models\Product;
 use Livewire\Component;
 
-class Create extends Component
+class Update extends Component
 {
     public ProductForm $form;
 
+    public function mount(Product $product)
+    {
+        $this->form->setProduct($product);
+    }
+
     public function save()
     {
-        $this->form->store();
+        $this->form->update();
 
-        session()->flash('success', 'Product created successfully.');
+        session()->flash('success', 'Product updated successfully.');
         $this->redirectRoute('products.index', navigate: true);
     }
 

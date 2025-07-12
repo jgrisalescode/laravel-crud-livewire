@@ -8,6 +8,8 @@ use Livewire\Form;
 
 class ProductForm extends Form
 {
+    public ?Product $product;
+
     #[Validate('required|string|max:255', as: 'product name')]
     public $name;
 
@@ -20,6 +22,15 @@ class ProductForm extends Form
     #[Validate('nullable|integer|min:0')]
     public $stock = 0;
 
+    public function setProduct(Product $product)
+    {
+        $this->product = $product;
+        $this->name = $product->name;
+        $this->description = $product->description;
+        $this->price = $product->price;
+        $this->stock = $product->stock;
+    }
+
     public function store()
     {
         $this->validate();
@@ -30,5 +41,12 @@ class ProductForm extends Form
             'price' => $this->price,
             'stock' => $this->stock,
         ]);
+    }
+
+    public function update()
+    {
+        $this->validate();
+
+        $this->product->update($this->all());
     }
 }
