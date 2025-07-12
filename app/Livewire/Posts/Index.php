@@ -10,6 +10,14 @@ class Index extends Component
 {
     use WithPagination;
 
+    public function delete(Product $product)
+    {
+        $product->delete();
+
+        session()->flash('success', 'Product deleted successfully.');
+        $this->redirectRoute('products.index', navigate: true);
+    }
+
     public function render()
     {
         return view('livewire.posts.index', [
