@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Posts\Create;
 use App\Livewire\Posts\Index;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -23,5 +24,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('products', Index::class)->name('products.index');
+Route::get('products/create', Create::class)->name('products.create');
 
 require __DIR__.'/auth.php';
