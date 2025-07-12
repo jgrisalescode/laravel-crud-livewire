@@ -2,43 +2,18 @@
 
 namespace App\Livewire\Posts;
 
+use App\Livewire\Forms\ProductForm;
 use App\Models\Product;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Create extends Component
 {
-    #[Validate('required|string|max:255', as: 'product name')]
-    public $name;
+    public ProductForm $form;
 
-    #[Validate('nullable|string|max:1000')]
-    public $description;
-
-    #[Validate('required|numeric|min:0')]
-    public $price;
-
-    #[Validate('nullable|integer|min:0')]
-    public $stock = 0;
-
-    public function store()
+    public function save()
     {
-        // $validated = $this->validate([
-        //     'name' => 'required|string|max:255',
-        //     'description' => 'nullable|string|max:1000',
-        //     'price' => 'required|numeric|min:0',
-        //     'stock' => 'nullable|integer|min:0',
-        // ]);
-
-        // Product::create($validated);
-
-        $this->validate();
-
-        Product::create([
-            'name' => $this->name,
-            'description' => $this->description,
-            'price' => $this->price,
-            'stock' => $this->stock,
-        ]);
+        $this->form->store();
 
         session()->flash('success', 'Product created successfully.');
         $this->redirectRoute('products.index', navigate: true);
