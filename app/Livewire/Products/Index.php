@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Posts;
+namespace App\Livewire\Products;
 
 use App\Models\Product;
 use Livewire\Component;
@@ -20,7 +20,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.posts.index', [
+        return view('livewire.products.index', [
             // 'products' => Product::simplePaginate(10),
             'products' => Product::latest()->paginate(10),
         ]);

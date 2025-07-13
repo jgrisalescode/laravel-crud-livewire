@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Posts;
+namespace App\Livewire\Products;
 
 use App\Livewire\Forms\ProductForm;
 use Livewire\Component;
@@ -19,6 +19,6 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.posts.create');
+        return view('livewire.products.create');
     }
 }

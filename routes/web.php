@@ -1,8 +1,8 @@
 <?php
 
-use App\Livewire\Posts\Create;
-use App\Livewire\Posts\Index;
-use App\Livewire\Posts\Update;
+use App\Livewire\Products\Create;
+use App\Livewire\Products\Index;
+use App\Livewire\Products\Update;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;

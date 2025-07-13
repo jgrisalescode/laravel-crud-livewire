@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Posts;
+namespace App\Livewire\Products;
 
 use App\Livewire\Forms\ProductForm;
 use App\Models\Product;
@@ -23,16 +23,8 @@ class Update extends Component
         $this->redirectRoute('products.index', navigate: true);
     }
 
-    public function delete(Product $product)
-    {
-        $product->delete();
-
-        session()->flash('success', 'Product deleted successfully.');
-        $this->redirectRoute('products.index', navigate: true);
-    }
-
     public function render()
     {
-        return view('livewire.posts.create');
+        return view('livewire.products.create');
     }
 }
