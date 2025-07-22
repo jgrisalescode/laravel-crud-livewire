@@ -10,7 +10,7 @@ Aprenderás como hacer un CRUD de Productos y verás como puedes usar Livewire p
 - 📸 [Instagram](https://www.instagram.com/jgrisalescode/)
 - 🌐 [juliangrisales.com](https://juliangrisales.com/)
 
-[Curso Completo en YouTube](https://youtu.be/PdPPWHSksaQ)
+[Curso Completo en YouTube](https://youtu.be/uTZ_EvJdtf0)
 
 #### Capítulos: 
 
